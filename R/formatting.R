@@ -5,7 +5,7 @@
 #' @param genbnk_id The index of the sequence ID in the GenBank pipe-separated annotation line (default: 4)
 #' @return The path to the final OrthoMCL compatible fasta file
 #' @examples
-#' formatted_file <- formatMCLfastas("small_data/")
+#' formatted_file <- formatMCLfastas("sample_data/")
 #' @export
 format_MCLfastas <- function(fa_dir, genbnk_id=4) {
   
@@ -52,7 +52,7 @@ format_MCLfastas <- function(fa_dir, genbnk_id=4) {
 #' @param mcl_mtrx OrthoMCL output matrix from analyze_OrthoMCL()
 #' @return Returns the original OrthoMCL output matrix with additional columns: representative sequence taxon, representative sequence id, representative sequence annotation, representative sequence 
 #' @examples
-#' joined_mtrx <- join_repset("small_data/repseq.fasta", mcl_mtrx)
+#' joined_mtrx <- join_repset(sample_data/repseq.fasta", mcl_mtrx)
 #' #mcl_mtrx previously derived from analyze_OrthoMCL()
 #' @export
 join_repset <- function(reps_file, mcl_mtrx) {
@@ -82,7 +82,7 @@ join_repset <- function(reps_file, mcl_mtrx) {
 #' @param format Select format of OrthoMCL output file (default: "ortho" for version 2.0 orthologGroups, option: "groups" for version 1.0 output)
 #' @return The path to the representative sequence file in fasta format
 #' @examples
-#' repseqfile <- pick_repseq("small_data/orthologGroups", "small_data")
+#' repseqfile <- pick_repseq("sample_data/orthologGroups", "sample_data/")
 #' @export
 pick_repseq <- function(mcl_file, fa_dir, del_mid=T, format="ortho") {
   
